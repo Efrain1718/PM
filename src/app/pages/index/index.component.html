@@ -1,0 +1,156 @@
+<div class="fondo" fxLayout="row" fxLayoutAlign="center center" fxFlex="100%">
+  
+    <div class="container" fxLayout="row wrap" fxFlex="80" fxLayoutAlign="center start" > 
+
+        
+        <div id="carousel" fxFlex="100" >
+            <p-carousel [value]="noticias" [numVisible]="1" [numScroll]="1" [autoplayInterval]="4000" [circular]="true" >
+
+                <ng-template pTemplate="header">
+                    <h2>Ultimas Noticias</h2>
+                </ng-template>
+
+                <ng-template let-noticias pTemplate="item" >
+                    <div class="Noticias-item">
+                        <div class="product-item-content">
+                            <div class="p-mb-3">
+                                <img src="../../../assets/Noticias/{{noticias}}" alt="Noticias de la Facultad"
+                                    class="product-image" />
+
+                            </div>
+                        </div>
+                    </div>
+                </ng-template>
+                
+            </p-carousel>
+        </div>
+
+
+        <div id="dashboar"  fxFlex="100" *ngIf="usuario" >
+            <h2>Tú Historial</h2>
+            <p-fieldset legend="Historial" [toggleable]="true">
+
+                <p-table [value]="historial"  responsiveLayout="scroll">
+                    <ng-template pTemplate="header">
+                        <tr>
+                            <th>Ultímas licenciaturas visitadas</th>
+                            <th>Fecha</th>
+
+                        </tr>
+                    </ng-template>
+                    <ng-template pTemplate="body" let-historial>
+                        <tr>
+                            <td>{{historial.licenciatura}}</td>
+                            <td>{{historial.fecha}}</td>
+                        </tr>
+                    </ng-template>
+                </p-table>
+
+            </p-fieldset>
+        </div>
+
+        <div id="US"  fxFlex="100">
+            <p-accordion [multiple]="true">
+                <h2>Sobre Nosotros</h2>
+                <p-accordionTab header="Nuestra Historia" [selected]="true">
+                   <p>Durante los primeros años de la década de los cincuentas, se reunía un grupo de profesores y estudiantes de Ingeniería Civil con el fin de buscar una solución al bajo nivel académico de las matemáticas en las preparatorias y facultades de la Universidad de Nuevo León.</p>
+                    <br>
+                   <p>Finalmente, en Septiembre de 1953 se inició esta Facultad, con el nombre de Escuela de Matemáticas, en una de las aulas de la Facultad de Ingeniería Civil que ocupaba entonces el ala norte del edificio de Colegio Civil. El Lic. Raúl Rangel Frías, Rector de la Universidad de Nuevo León en esa época y fundador de la Facultad de Filosofía, Ciencias y Letras, en 1950, promovió la idea de crear la Escuela de Matemáticas, por considerarla un importante pilar en la estructura de la propia institución universitaria.</p>
+                   <br>
+                   <p>El Ing. Leobardo Elizondo, Director de la Facultad de Ingeniería Civil desde 1948 había establecido un sistema de laboratorios en los Cursos de Matemáticas, a base de ejercicios y pruebas parciales, a cargo de Maestros Auxiliares. Uno de los objetivos inmediatos de la Escuela, era preparar a Maestros especializados en Matemáticas para la propia Facultad, la Escuela de Bachilleres y las Facultades de Ciencias Químicas, Ingeniería Mecánica y Eléctrica y Arquitectura que fueron fundadas por esas fechas.</p>
+                   <br>
+                   <p>Para crear un ambiente propicio, previo al inicio de actividades de la Escuela, se invitó a distinguidos conferencistas como el Dr. Carlos Graeff Fernández y el Dr. Nabor Carrillo Flores. La primera clase la dió el Ing. Rafael Serna Treviño. El primer Director fue el Ing. Roberto Treviño González de 1953 a 1958.</p>
+                   <br>
+                   <p>En los primeros años se recibió la ayuda académica de la Facultad de Ciencias de la UNAM, de donde vinieron distinguidos Maestros por períodos de una semana hasta 2 meses, entre los cuales estuvieron el Dr. Emilio Luis, el M. en C. Remigio Valdez y el Sr. Gonzalo Zubieta.</p>
+                   <br>
+                   <p>En Septiembre de 1953, se otorgaron las primeras Medias Plantas de Matemáticas, designándose al Ing. Rafael Serna Treviño, al Ing. Eladio Sáenz Quiroga y al Ing. Domingo Treviño Sáenz, para apoyar dicha Carrera de Matemáticas en su primera generación, estos Ingenieros se distinguieron porque fueron los primeros en apoyar la Carrera. Con la ayuda económica del Patronato Universitario y la Sociedad Matemática Mexicana, se envió a los Alumnos a la Facultad de la UNAM a complementar sus cursos.</p>
+                   <br>
+                   <p>Así fue como nació nuestra Facultad, iniciándose primeramente como Escuela de Matemáticas, que algunos la calificaban con muy pocas posibilidades de éxito.</p>
+                   <br>
+                   <p>En 1958, la Escuela se trasladó a una casa ubicada frente al Hospital del Seguro Social, por 15 de mayo. Un mismo día de diciembre de ese año, se otrorgaron los primeros títulos de Licenciatura en Matemáticas, mediante Examen Profesional y presentación de ensayos, al Ing. Rafael Serna Treviño y al Ing. Eladio Sáenz Quiroga.</p>
+                   <br>
+                   <p>En 1959, la Escuela de Matemáticas se trasladó a Ciudad Universitaria, ocupando la sección de cubículos del edificio de laboratorios de la Facultad de Ingeniería Mecánica y Eléctrica, hasta 1962 cuando se trasladó a los pisos noveno y décimo de la torre de Rectoría, donde por primera vez se contó con un local adecuado, gracias al apoyo brindado por el Rector, Sr. Don José Alvarado. En la ceremonia de inauguración del local, se mencionó el mérito del Ing. José Treviño García por su colaboración gratuita como Profesor de Álgebra Abstracta y Lógica Matemática durante 8 años, así como por sus obsequios de libros y colecciones de revistas Matemáticas con los que inció la Biblioteca de la Escuela en 1959.</p>
+                   <br>
+                   <p>Este año salieron a realizar estudios de Post-grado el Ing. Rafael Serna y el Lic. Romeo Madrigal, quedando temporalmente como Secretario en funciones de Director, el Ing. Eladio Sáenz. Con apoyo de Rectoría, se recibió un obsequio de libros del Consulado Americano, en respuesta a una solicitud presentada por la Escuela, incluyendo una lista de textos de Matemáticas.</p>
+                   <br>
+                   <p>El Departamento de Biblioteca de la Universidad, empezó a proporcionar libros en respuesta a solicitudes específicas de la Escuela. En 1964, la Escuela de Matemáticas se transformó en la Facultad de Ciencias Físico-Matemáticas, iniciándose una nueva carrera de Licenciado en Físico-Matemáticas, bajo la Dirección del Ing. Rafael Serna y con la incorporación del Maestro de Física Lic. Rodolfo Jaime Mendoza, de tiempo completo.</p>
+                   <br>
+                   <p>Los Maestros y Ex-alumnos colaboraron donando libros y a partir de 1966, la Sociedad de Alumnos impuso una cuota semestral por cada alumno, una parte de la cual se destina a la compra de libros para la Biblioteca y otra para Laboratorios.</p>
+                   <br>
+                   <p>Los Laboratorios de Física de la Facultad, se iniciaron en 1964 con un equipo de electricidad adquirido con el producto de la venta de boletos de sorteos del Patronato Universitario en la que participaron Alumnos y Maestros. Desde esa fecha se han elaborado proyectos detallados y solicitudes de equipos con la colaboración del I.P.N. y la U.N.A.M.</p>
+                   <br>
+                   <p>En 1965 se enviaron Maestros de la Facultad al I.P.N., para obtener Maestrías en Matemáticas en el Centro de Investigaciones y Estudios Avanzados, regresando en 1969 para incorporarse al cuerpo docente de Matemáticas.</p>
+                   <br>
+                   <p>En 1968, con motivo del XV Aniversario de la Facultad, se celebra un concurso para escoger un escudo que nos representaría. Este concurso es ganado por uno de los alumnos, Andrés Torres Ruiz, sin embargo, el signo que él presentó no es exactamente el que tenemos, puesto que en una junta directiva que hubo posteriormente, se le hicieron algunas modificaciones. El 4 de Noviembre de 1968, se dió a conocer el escudo actual.</p>
+                   <br>
+                   <p>De 1967 a 1969 ocupó la Dirección de la Facultad el Lic. Jaime Navarro Cuevas. En 1969 salieron los primeros Físico-Matemáticos al I.P.N. a realizar estudios de Post-grado en Física para reforzar el staff de Maestros de Física de la Facultad.</p>
+                   <br>
+                   <p>En 1969, asumió la Dirección de la Facultad, el Ing. Eladio Sáenz Quiroga, por la nueva modalidad de elección en junta directiva. Este año se modificaron los planes de estudio después de una revisión cuidadosa, con la participación de conferencistas invitados y tomando en cuenta las opiniones de los egresados de la Facultad respecto a sus actividades profesionales y las posibilidades de los futuros egresados de Física y Matemáticas en la docencia, investigación y las empresas públicas y privadas.</p>
+                   <br>
+                   <p>En 1969, asumió la Dirección de la Facultad, el Ing. Eladio Sáenz Quiroga, por la nueva modalidad de elección en junta directiva. Este año se modificaron los planes de estudio después de una revisión cuidadosa, con la participación de conferencistas invitados y tomando en cuenta las opiniones de los egresados de la Facultad respecto a sus actividades profesionales y las posibilidades de los futuros egresados de Física y Matemáticas en la docencia, investigación y las empresas públicas y privadas.</p>
+                   <br>
+                   <p>En Agosto de 1970 se trasladó la Facultad a su actual edificio en Ciudad Universitaria, construido por el Patronato Universitario y con la colaboración del Patrimonio de Beneficio Universitario.</p>
+                   <br>
+                   <p>Adquiriéndose nuevo mobilirario con un fondo disponible en el Patronato Universitario, producto de la venta de boletos de sorteos de la Siembra Cultural, en la que participaron Maestros y Alumnos de la Facultad y se incorporaron nuevos Maestros de Física y Matemáticas provenientes del I.P.N.</p>
+                   <br>
+                   <p>El 7 de Junio de 1971, el Congreso del Estado, aprobó la Ley de Autonomía de la Universidad y el Decano Ing. Rafael Serna Treviño, ocupó la Dirección de la Facultad hasta Septiembre de 1972.</p>
+                   <br>
+                   <p>De 1972 a 1974, ocupó el cargo de Director de Estudios Superiores con la Maestría en Ingeniería Nuclear, bajo la Direccion del Dr. Federico A. Rodríguez y la Maestría en Estadística, bajo la coordinación del Ing. Rafael Serna Treviño, para lo cual se invitó a colaborar a Maestros de la U.N.A.M , del I.P.N. y Chapingo.</p>
+                   <br>
+                   <p>En 1975 se aprobaron nuevas modificaciones, y la creación de la Licenciatura en Ciencias Computacionales, y modificaciones a las carreras de Licenciado en Matemáticas y Licenciado en Física.</p>
+                   <br>
+                   <p>En 1984 se hizo la reforma del Plan de Estudios de la Licenciatura en Ciencias Computacionales, con la participación de Maestros y Ex-Alumnos.</p>
+                   <br>
+                   <p>En 1990, se reformaron los 3 planes de Estudio. En 1992 se aprobaron las Maestrías en Ciencias Computacionales, Control Total de Calidad y Metrología de la Radiación.</p>
+                   <br>
+                   <p>En el año de 1995 se optó por hacer modificaciones a los planes de estudios para estar lo más actualizados a las necesidades de la sociedad, a lo cual se llevaron a cabo modificaciones; siendo aplicadas y puestas en práctica en el año de 1997 (Semestre Agosto-Enero).</p>
+                   <br>
+                   <p>A partir del 15 de noviembre de 1995 ocupó el cargo de Director el Ing. Oscar Recio Cantú, en cuya administración se creó el Doctorado en Ingeniería Industrial, así como la Maestría en Teleinformática. Fue durante este periodo en el que se firmó un convenio de intercambio estudiantil con la Universidad de Concepción de Chile.</p>
+                   <br>
+                   <p>ambién se creó la página Web de nuestra Facultad, se institucionalizó la entrega de reconocimientos por antigüedad al personal docente, se construyó el Edificio de Posgrado y el Observatorio Astronómico, ubicado en la Hacienda San Pedro de la UANL, en Zuazua, N.L.</p>
+                   <br>
+                   <p>A partir de noviembre de 2002 la Facultad fue dirigida por la M.A. Carmen del Rosario de la Fuente García. Durante su administración se promovió el desarrollo de Investigación, por lo que, en septiembre del año 2003, el Dr. Manuel García Méndez obtuvo el Premio de Investigación 2002 UANL en el área de Ciencias Exactas, así mismo, el 10 de noviembre del año 2003 se entrgó por primera vez dentro de la Facultad y como fruto del Doctorado en Ingeniería Industrial su grado de Doctor, a la Maestra Aracelia Alcorta García, Catedrática de nuestra Facultad.</p>
+                   <br>
+                   <span> <strong>Esta historia se escribió en base a una investigación documental y testimonios personales de quienes vivieron e hicieron la historia.</strong> </span>
+                </p-accordionTab>
+                <p-accordionTab header="Misión">
+                   <q>Formar profesionales en las Ciencias Físicas, Matemáticas y Computacionales, en sus modalidades pura y aplicada, con sentido humanista, creativos, emprendedores e innovadores, con principios y valores, capaces de generar, difundir y aplicar el conocimiento pertinente, para responder a las demandas del desarrollo científico, tecnológico, económico, cultural y social, de manera sustentable, de la región y del país en el contexto internacional.</q>
+                </p-accordionTab>
+                <p-accordionTab header="Visión 2030 FCFM">
+                   <q>La Facultad de Ciencias Físico Matemáticas de la Universidad Autónoma de Nuevo León es en el 2030 un referente internacional por su calidad educativa, inclusión, equidad, generación y aplicación innovadora del conocimiento en los programas educativos, tanto de licenciatura como de posgrado; por el alto nivel de formación y reconocimiento de su personal académico; por el excelente nivel de su gestión, infraestructura y equipamiento; y la sólida vinculación con los sectores público, social y productivo, que contribuye y trasciende en la transformación y el bienestar de la sociedad.</q>  
+                </p-accordionTab>
+
+                <p-accordionTab header="Políticas de Calidad">
+                    <q>Garantizar la calidad de los servicios brindados a nuestros Estudiantes, Profesores y Empleados y a la Sociedad, a través de la mejora continua del proceso enseñanza aprendizaje, la gestión administrativa y las competencias del personal, dentro del marco jurídico de la Universidad Autónoma de Nuevo León</q>
+                 </p-accordionTab>
+
+                 <p-accordionTab header="Ubicación">
+                    
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3594.36069609605!2d-100.31738368497977!3d25.725582883653132!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x866294526fac19e9%3A0xb7efe86deb29d4aa!2sFCFM%2C%20Ni%C3%B1os%20H%C3%A9roes%2C%20Ciudad%20Universitaria%2C%20San%20Nicol%C3%A1s%20de%20los%20Garza%2C%20N.L.!5e0!3m2!1ses-419!2smx!4v1634850797421!5m2!1ses-419!2smx" 
+                    width="80%" height="450" style="border:0; margin-left: 10%;" allowfullscreen="" loading="lazy"></iframe>
+
+                </p-accordionTab>
+ 
+            </p-accordion>
+           
+            
+        </div>
+
+        <div id="carreras" fxLayout="row wrap" fxFlex="100" fxLayoutAlign="space-evenly center" >
+
+            <h2  fxFlex="100">Nuestras Licenciaturas</h2>
+            
+            <div *ngFor="let lic of lics" fxFlex="1 1 30" >
+                <p-card  styleClass="lic-cards" >
+                    <ng-template pTemplate="title"  >
+                        <h3 [style]="{ 'border-bottom':'5px solid red', 'padding-bottom':'10px'}" [ngStyle]="{'border-color':  lic.color}"> {{lic.nombre}}</h3>
+                    </ng-template>
+        
+                    <p> {{lic.objetivo}} </p>
+                </p-card>
+            </div>
+           
+        </div>
+      
+    </div>
+</div>

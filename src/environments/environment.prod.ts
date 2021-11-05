@@ -1,3 +1,5 @@
 export const environment = {
-  production: true
+  production: true,
+  baseUrl: "https://pm2021.azurewebsites.net/pm"
+
 };

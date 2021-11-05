@@ -1,1 +1,462 @@
-/* You can add global styles to this file, and also import other style files */
+*{
+    margin: 0px;
+    padding: 0px;
+    font-family: 'Roboto', sans-serif;
+
+}
+
+/*General*/
+
+.space-left{
+    margin-left:15px !important;
+}
+
+.space-right{
+    margin-right:15px !important; 
+}
+
+.space-right-p{
+    padding-right:7px !important; 
+}
+
+hr{
+    border-color: #c7c7c7;
+}
+
+
+  .fondo{
+    background-color:#EAEFEE  ;
+    min-height:100vh;
+    margin-top:170px;
+  }
+
+  .container{
+    background-color:#ffffff;
+    min-height:100%;
+  }
+
+
+/*Menu*/
+#Header{
+    position: fixed;
+    background-color: white;
+    z-index: 2;
+}
+
+    #Cabecera{
+        margin-top: 10px;
+        margin-bottom: 10px;
+    }
+
+   .Menu.p-menubar{
+       border:0;
+       background-color: white;
+       
+   }
+
+   .Menu.p-menubar .p-menubar-root-list > .p-menuitem > .p-menuitem-link,.p-button,.p-button.p-button-text{
+       transition: all 200ms !important;
+   }
+   
+   .Menu.p-menubar .p-menubar-root-list > .p-menuitem > .p-menuitem-link:not(.p-disabled):hover,.p-button:hover{
+        background-color: #2467dacc !important;
+        transform: scale(1.2,1.2);
+        box-shadow:0px 5px 4px #0a2d69;
+    
+   }
+
+   .Menu.p-menubar .p-menubar-root-list > .p-menuitem > .p-menuitem-link:not(.p-disabled) .p-menuitem-text{
+    transition: all 600ms;
+   }
+
+   .Menu.p-menubar .p-menubar-root-list > .p-menuitem > .p-menuitem-link:not(.p-disabled):hover .p-menuitem-text,.p-button:hover.p-button-text
+   ,.Menu.p-menubar .p-menuitem .p-menuitem-link:not(.p-disabled):hover .p-menuitem-icon{
+
+    color:white !important;
+   }
+
+   .Menu.p-menubar .p-menubar-root-list > .p-menuitem > .p-menuitem-link:not(.p-disabled):focus,.p-button:focus{
+    background-color: #2467dacc !important;
+    box-shadow: inset 0px 0px 0px 3px #18438dcc !important
+    }
+    .Menu.p-menubar .p-menubar-root-list > .p-menuitem > .p-menuitem-link:not(.p-disabled):focus .p-menuitem-text,.p-button:focus.p-button-text
+    ,.Menu.p-menubar .p-menuitem .p-menuitem-link:not(.p-disabled):focus .p-menuitem-icon{
+
+        color:white !important;
+       }
+
+   .Menu.p-menubar .p-menuitem-icon{
+    transition: all 600ms;
+   }
+
+   .Menu.p-menubar .p-menubar-end{
+    margin-left: 0px ;
+   }
+
+.active-b{
+    background-color: #2467dacc !important;
+    box-shadow: inset 0px 0px 0px 3px #18438dcc !important;
+    color:white !important;
+}
+
+/*Input menu*/
+   .Menu.p-menubar .p-input-icon-left .p-inputtext{
+    font-family: 'Roboto', sans-serif;
+
+    border-radius: 5px;
+   }
+
+   .Menu.p-menubar .p-input-icon-left .p-inputtext:enabled:focus{
+    box-shadow: 0px 1px 1px #29539a,0px 2px 2px #29539a,0px 3px 3px #29539a,1px 4px 4px #29539a,2px 5px 5px #29539a,2px 6px 5px #29539a,2px 7px 5px #29539a;
+    border-color:#2d6dda ;
+   }
+
+   .Menu.p-menubar .p-input-icon-left .p-inputtext:hover{
+    border-color:#2d6dda ;
+   }
+
+
+/*Botones menu*/
+
+   .p-button.p-button-text{
+    color:#495057 !important;
+}
+
+/*Iconos*/
+
+.Menu.p-menubar .p-button i.fa,.Menu.p-menubar .p-button span.pi {
+    transition: all 200ms;
+}
+   
+/*dasboard*/
+.p-fieldset{
+    margin: 0px 36px 10px 36px
+}
+
+.p-fieldset.p-fieldset-toggleable .p-fieldset-legend a {
+    transition: all 400ms !important;
+}
+
+.p-fieldset.p-fieldset-toggleable .p-fieldset-legend a:hover{
+    background-color: #2467dacc ;
+    color: white;
+}
+
+.p-fieldset.p-fieldset-toggleable .p-fieldset-legend a:focus {
+    box-shadow: 0 0 2px .5px #2d6dda !important;
+    background-color: #2467dacc ;
+    color: white;
+  }
+
+  .p-fieldset .p-fieldset-content {
+    padding: 1rem;
+    box-shadow: inset 0 0 7px;
+    }
+   
+ /*Nosotros*/
+ 
+.p-accordion.p-component{
+    font-family: 'Roboto', sans-serif;
+
+}
+ .p-accordion p-accordiontab:not(:first-child) .p-accordion-header .p-accordion-header-link{
+    transition: all 400ms !important;
+ }
+
+ .p-accordion p-accordiontab:not(:first-child) .p-accordion-header .p-accordion-header-link:hover{
+    background-color: #2d6dda !important;
+    color: white !important;
+ }
+
+ .p-accordion p-accordiontab:not(:first-child) .p-accordion-header .p-accordion-header-link:focus{
+    background-color: #2d6dda !important;
+    color: white !important;
+    background-color: #2467dacc ;
+ }
+
+
+ .p-accordion p-accordiontab .p-accordion-content{
+     
+    font-family: 'Roboto', sans-serif;
+    border: none;
+     text-align: justify;
+     margin:2% 4% 2% 2%;
+ }
+
+ .p-accordion p-accordiontab .p-accordion-content span strong{
+    margin-left: 18%;
+ 
+ }
+
+ /*Card carreras*/
+ 
+ .p-card{
+    box-shadow:0px 1px 1px 1px #0a2d69,0px 2px 1px 1px #0a2d69,0px 3px 2px 1px #0a2d69,0px 4px 2px 1px #0a2d69,0px 5px 3px 1px #0a2d69, 0px 6px 3px 1px #0a2d69 !important; 
+    border-radius: 5px !important  ; 
+    text-align: justify;
+ }
+
+ .p-card .p-card-title{
+    text-align: start;
+}
+
+ .lic-cards, .lic-cards-c{
+    min-width: 30%;
+    height: 245px;
+    margin-top: 30px;
+    overflow-y: auto;
+    
+    }
+
+    .p-card:hover{
+        cursor: pointer;
+    }
+
+/*formato general del dialogo*/
+ .p-dialog .p-dialog-content{
+     overflow-y: unset;
+ }
+ 
+ .p-dialog .p-dialog-header{
+    font-size: 25px;
+}
+/*Login*/
+ .login div input[type="text"],.login div input[type="email"], .login div input[type="password"] {
+     width: 70%; 
+     padding: 5px;
+     padding-left: 80px;
+     margin: 20px;
+
+     font-family: 'Roboto', sans-serif;
+     font-size: 18px;
+     border:none;
+     border-bottom: 1px solid #c0c0c0;    
+ }
+
+ /* .login div input:required {
+  background-color: #c02228;
+} */
+
+ .login div label[for="email"],.login div label[for="password"] {
+    position: absolute;
+     left: 18%;
+     font-size: 14px;
+    transition:all 300ms !important;
+  }
+
+.login div  input:focus+label[for="email"],.login div  input:focus+label[for="password"]{
+   left: 7%; 
+   font-size: 14px;
+}
+
+ .login div #logbtn .p-button.p-button-raised, .registro div #regbtn .p-button{
+     background-color: transparent;
+     border:none;
+     color:#495057;
+
+     transition: all 200ms;
+ }
+
+ .login #logsucces .p-button:hover,
+ .informacion #guardar .p-button:hover,
+ .aceptar.p-button:hover,
+ .registro #registrarse  .p-button:hover{
+     transform: scale(1,1);
+     background-color: rgb(11, 141, 11) !important;
+     box-shadow:0px 5px 4px rgb(1, 116, 1),0px 6px 4px rgb(1, 116, 1);
+     color: white !important;
+ }
+
+ .login #logcancel .p-button:hover,
+ .informacion #eliminar .p-button:hover,
+ .rechazar.p-button:hover{
+    transform: scale(1,1);
+    background-color: #c02228 !important;
+    box-shadow:0px 5px 4px #9b1c20,0px 6px 4px #9b1c20;
+    color: white !important;
+}
+
+.login #logsucces .p-button:focus,
+.informacion #guardar .p-button:focus,
+.aceptar.p-button:focus,
+.registro #registrarse  .p-button:focus{
+    background-color: rgb(11, 141, 11) !important;
+    box-shadow: inset 0px 0px 0px 3px rgb(1, 116, 1) !important;
+    color: white !important;
+    }
+
+.login #logcancel .p-button:focus,
+.informacion #eliminar .p-button:focus,
+.rechazar.p-button:focus{
+    background-color: #c02228 !important;
+    box-shadow: inset 0px 0px 0px 3px #9b1c20 !important;
+    color: white !important;
+ }
+
+.login div input:focus-visible {
+ outline: none;
+}
+/*Registro y  informacion usuario*/
+
+.registro div input[type="text"], .registro div input[type="email"],.registro div input[type="password"],
+.informacion div input[type="text"], .informacion div input[type="email"],.informacion div input[type="password"]  {
+    width: 100%; 
+    padding: 5px;
+    padding-left: 10px;
+    margin: 20px;
+
+    font-family: 'Roboto', sans-serif;
+    font-size: 18px;
+    border:none;
+    border-bottom: 1px solid #c0c0c0;  
+    
+    transition: all 200ms;
+}
+
+.registro div input[type="file"],
+.informacion div input[type="file"]{
+    opacity: 0;
+    position: absolute;
+    z-index: -1;
+    
+}
+.registro div label[for="img"],
+.informacion div label[for="img"]{
+    font-family: 'Roboto', sans-serif;
+  
+    color: #495057;
+    background-color: transparent;
+    display: inline-block;
+    transition: all .5s;
+    cursor: pointer;
+    padding: 15px 40px !important;
+    width: fit-content;
+    text-align: center;
+    border-radius: 5px;
+}
+
+
+.registro div label[for="img"]:hover,
+.informacion div label[for="img"]:hover{
+    background-color: #2467dacc !important;
+    box-shadow:0px 5px 4px #0a2d69,0px 6px 4px #0a2d69;
+    color: white;
+   
+}
+.registro #img-p,
+.informacion #img-p{
+    margin-top: 20px;
+    height: 140px;
+    overflow: hidden;
+}
+.registro #img-p img,
+.informacion #img-p img{
+    width: 20%;
+    border-radius: 5%;
+}
+
+.registro div input:focus-visible,
+.informacion div input:focus-visible {
+    outline: none;
+   }
+
+
+
+ .registro div #regbtn .p-button,
+ .informacion div #regbtn .p-button{
+    background-color: transparent;
+    border:none;
+    color:#495057;
+    transition: all 200ms;
+}
+
+.registro form #titulo-form h5{
+    margin: 0px 0px 10px 20px ;
+    color:#495057;
+    font-weight: 500;
+    text-decoration: underline;
+
+}
+
+ /*Ver informacion del usuario*/
+.informacion div input[type="email"]:read-only {
+background-color: #f7f4f4;
+color:#c9c4c4;   
+}
+
+
+
+
+/*Card componente Licenciaturas*/
+
+.lic-cards-c{
+    min-height: 421px;
+    }
+    
+.lic-cards-c .p-card-header img{
+        width: 100%;
+        height: 220px;
+        text-align: center;
+}
+
+/*Breadcrum */
+#regresar .p-breadcrumb{
+    border: none;
+ 
+}
+#regresar .p-breadcrumb ul li .p-menuitem-link .p-menuitem-icon{
+    color: #495057;
+    transition: all 200ms;
+    
+    font-size: 150%;
+}
+
+#regresar .p-breadcrumb ul li .p-menuitem-link .p-menuitem-icon:hover{
+    transform: scale(1.2,1.2);
+    color: #2d6dda;
+}
+
+/*Dialogo de confirmacion de borrar cuenta*/
+.p-dialog .p-dialog-footer button{
+    background-color: transparent;
+    border:none;
+    color:#495057;
+
+    transition: all 200ms;
+}
+
+/*Estilos de validaciones de forms*/
+
+input.ng-touched.ng-dirty.ng-invalid, .error{
+    border: 1px solid #c02227 !important;
+    box-shadow: 0px 0px 3px #9b1c20 ;
+    border-radius: 3px;
+}
+
+input.ng-touched.ng-pristine.ng-invalid{
+    border: 1px solid #c02227 ;
+    box-shadow: 0px 0px 3px #9b1c20 ;
+    border-radius: 3px;
+}
+
+
+
+.ng-untouched.ng-pristine.ng-valid input{
+    border:none  ;
+    border-bottom: 1px solid #c0c0c0 ;  
+    box-shadow: none ;
+    background-color: gold;
+}  
+
+
+ .mssg-error{
+     
+     font-size: 10px;
+     position: absolute;
+     top:61%;
+     left: 53%;
+
+     color:#9b1c20;
+ }
+    
+/*Pruebas*/

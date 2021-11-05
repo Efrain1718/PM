@@ -1,0 +1,83 @@
+
+<div class="fondo" fxLayout="row" fxLayoutAlign="center center" fxFlex="100%">
+  
+    <div class="container" fxLayout="row wrap" fxFlex="80" fxLayoutAlign="space-evenly start" *ngIf="lic;else loading"> 
+
+        <div id="regresar" fxFlex="1 1 100" fxLayoutAlign="start start">
+            <p-breadcrumb [model]="items"></p-breadcrumb>
+        </div>
+    
+        
+        <h1 [ngStyle]='{"border-color": lic.color}' [style]="{ 'border-bottom':'5px solid red'}" fxFlex="1 1 100" id="titulo"> {{lic.nombre}} </h1>
+
+        <div id="img" fxFlex="1 1 100" fxLayoutAlign="center center">
+             <img src="../../../assets/Licenciaturas/{{lic.foto}}" alt="">
+        </div>
+       
+
+        <div id="info" fxFlex="100">
+            <p-accordion [multiple]="true">
+                
+                <h2>Información de la Licenciatura</h2>
+
+                <p-accordionTab header="Nuestro Objetivo" [selected]="true">
+                  <q>{{lic.objetivo}}</q>
+                </p-accordionTab>
+
+                <p-accordionTab header="Cualidades del Aspirante">
+                    <ul>
+                        <li *ngFor="let cualidad of cualidades">{{cualidad}}</li>
+                    </ul>
+                </p-accordionTab>
+
+                <p-accordionTab header="Perfil Egresado">
+                    <q>{{lic.perfil_egresado}}</q>
+                  </p-accordionTab>
+
+                  
+                <p-accordionTab header="Areas de Laborales">
+                    <ul>
+                        <li *ngFor="let trabajo of trabajos">{{trabajo}}</li>
+                    </ul>
+                </p-accordionTab>
+ 
+            </p-accordion>                    
+        </div>
+
+        <div id="plan-estudios"  fxFlex="100"  >
+            <h2>Plan de estudios</h2>
+            <p-fieldset legend="Plan de estudios" [toggleable]="true" >
+
+                <p-table id="tabla" [value]="materias" [paginator]="true" [rows]="5" [showCurrentPageReport]="true" responsiveLayout="scroll"
+                currentPageReportTemplate="Mostrando {first} al {last} de {totalRecords} Materias" [rowsPerPageOptions]="[5,10,20]">
+                <ng-template pTemplate="header">
+                    <tr>
+                        <th>Nombre de la Materia</th>
+                        <th>Créditos</th>
+                        <th>Semetre</th>
+
+                    </tr>
+                </ng-template>
+                <ng-template pTemplate="body" let-mat>
+                    <tr>
+                        <td>{{mat.nombre}}</td>
+                        <td>{{mat.creditos}}</td>
+                        <td>{{mat.semestre}}</td>
+                    </tr>
+                </ng-template>
+
+            </p-table>
+
+            </p-fieldset>
+        </div>
+        
+    </div>
+
+
+    <ng-template #loading>
+    <p-progressSpinner></p-progressSpinner>
+    </ng-template>
+    
+</div>
+
+

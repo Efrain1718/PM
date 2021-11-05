@@ -1,0 +1,22 @@
+<div class="fondo" fxLayout="row" fxLayoutAlign="center center" fxFlex="100%">
+    <div class="container" fxLayout="row wrap" fxFlex="80" fxLayoutAlign="space-evenly start" *ngIf="lics;else loading"  > 
+        <h2 fxFlex="100%">Nuestras Licenciaturas</h2>
+        <div  *ngFor="let lic of lics" fxFlex="1 1 45" id="licenciaturas">
+            <p-card  styleClass="lic-cards-c" (click)="In_lic(lic.id)" >
+                <ng-template pTemplate="header">
+                    <img alt="Card" src="../../../assets/Licenciaturas/{{lic.foto}}">
+                </ng-template>
+
+                <ng-template pTemplate="title"  >
+                    <h3 [style]="{ 'border-bottom':'5px solid red', 'padding-bottom':'10px'}" [ngStyle]="{'border-color':  lic.color}"> {{lic.nombre}}</h3>
+                </ng-template>
+    
+                <p> {{lic.objetivo}} </p>
+            </p-card>
+        </div>
+    </div>
+    <ng-template #loading>
+        <p-progressSpinner></p-progressSpinner>
+    </ng-template>
+</div>
+
