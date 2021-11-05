@@ -241,21 +241,25 @@ if(!localStorage.getItem('visited')){
           .subscribe(resp => console.log(resp))
         }
 
-        setTimeout(() => {
+        // setTimeout(() => {
         this.pageservice.aux_login.next(undefined);
+        this.pageservice.aux_historial.next(undefined);
         localStorage.removeItem('user');
         localStorage.removeItem('historial');
-        window.location.reload();
-        }, 500);
+        //location.href="/index"
+        // }, 500);
 
-
+        setTimeout(() => {
+          this.router.navigate(['/index']);
+         }, 100);
     }
     else{
       setTimeout(() => {
         this.pageservice.aux_login.next(undefined);
+        this.pageservice.aux_historial.next(undefined);
         localStorage.removeItem('user');
-        window.location.reload();
-        }, 500);
+        this.router.navigate(['/index']);
+        }, 100);
       
     }
      
