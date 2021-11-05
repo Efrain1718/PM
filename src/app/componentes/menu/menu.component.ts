@@ -139,25 +139,27 @@ export class MenuComponent implements OnInit {
 if(!localStorage.getItem('visited')){
    this.pageservice.aux_onboarding_menu.subscribe(resp => {
     if(resp){
-      introJs().setOptions({
-        nextLabel: 'Siguente',
-        prevLabel: 'Anterior',
-        doneLabel: 'Siguiente tutorial',
-        steps: [
-          { 
-            intro: "¡Hola y bienvenido/a a la pagina oficial de la Facultad de Ciencias Físico Matemáticas!",
-            title:"Bienvenido/a"
-          },
-          {
-            element: document.querySelector('.menu-ob')!,
-            intro: "Aquí se encuentra nuestro menú deonde podras interactuar con la página como: navegar, iniciar sesión, registrarse, etc.",
-            title:"Menu"
-          }
-        ]
-      }).start().onexit(()=>{ 
-        this.pageservice.aux_onboarding_menu.next(false); 
-        this.pageservice.aux_onboarding_index.next(true);    
-        })
+      setTimeout(() => {
+        introJs().setOptions({
+          nextLabel: 'Siguente',
+          prevLabel: 'Anterior',
+          doneLabel: 'Siguiente tutorial',
+          steps: [
+            { 
+              intro: "¡Hola y bienvenido/a a la pagina oficial de la Facultad de Ciencias Físico Matemáticas!",
+              title:"Bienvenido/a"
+            },
+            {
+              element: document.querySelector('.menu-ob')!,
+              intro: "Aquí se encuentra nuestro menú deonde podras interactuar con la página como: navegar, iniciar sesión, registrarse, etc.",
+              title:"Menu"
+            }
+          ]
+        }).start().onexit(()=>{ 
+          this.pageservice.aux_onboarding_menu.next(false); 
+          this.pageservice.aux_onboarding_index.next(true);    
+          });
+      }, 250);
     }
   });   
 }
@@ -167,8 +169,14 @@ if(!localStorage.getItem('visited')){
   }
 
   trust_url(){
-    let url="https://pm2021.azurewebsites.net/img/"+this.info_usuario.url_foto;
-    return this.sanitizer.bypassSecurityTrustUrl(url);
+    if(this.info_usuario.url_foto){
+      let url="https://pm2021.azurewebsites.net/img/"+this.info_usuario.url_foto;
+      return this.sanitizer.bypassSecurityTrustUrl(url);
+    }
+    else{
+      return
+    }
+   
   }
   Ver_login(){
   this.ver_login=true;

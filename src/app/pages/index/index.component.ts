@@ -91,36 +91,39 @@ export class IndexComponent implements OnInit {
   
     this.pageservice.aux_onboarding_index.subscribe(resp  => {
       if(resp){
-        introJs().setOptions({
-      nextLabel: 'Siguente',
-      prevLabel: 'Anterior',
-      doneLabel: 'Siguiente tutorial',
-          steps: [
-            { 
-              element: document.querySelector('div#carousel p-carousel')!,
-              intro: "Aquí se encuentran las últimas noticias sobre la facultad.",
-              position:"top",
-              title:"Inicio"
-            },
-            {
-              element: document.querySelector('#US')!,
-              intro: "Aquí se encuentra la sección sobre la hisotria de la facultad.",
-              position:"right",
-              title:"Inicio"
-            }
-            ,
-            {
-              element: document.querySelector('#carreras')!,
-              intro: "Aquí se encuentran las vistas previas de las licenciaturas.",
-              position:"right",
-              title:"Inicio"
-            }
-          ]
-        }).start().onexit(()=>{  
-          this.pageservice.aux_onboarding_index.next(false);
-          this.pageservice.aux_onboarding_licenciaturas.next(true);
-          this.router.navigate(['licenciaturas'])
-          });
+        setTimeout(() => {
+          introJs().setOptions({
+            nextLabel: 'Siguente',
+            prevLabel: 'Anterior',
+            doneLabel: 'Siguiente tutorial',
+                steps: [
+                  { 
+                    element: document.querySelector('div#carousel p-carousel')!,
+                    intro: "Aquí se encuentran las últimas noticias sobre la facultad.",
+                    position:"top",
+                    title:"Inicio"
+                  },
+                  {
+                    element: document.querySelector('#US')!,
+                    intro: "Aquí se encuentra la sección sobre la hisotria de la facultad.",
+                    position:"right",
+                    title:"Inicio"
+                  }
+                  ,
+                  {
+                    element: document.querySelector('#carreras')!,
+                    intro: "Aquí se encuentran las vistas previas de las licenciaturas.",
+                    position:"right",
+                    title:"Inicio"
+                  }
+                ]
+              }).start().onexit(()=>{  
+                this.pageservice.aux_onboarding_index.next(false);
+                this.pageservice.aux_onboarding_licenciaturas.next(true);
+                this.router.navigate(['licenciaturas'])
+                });
+        }, 250);
+      
       }
     });
 
