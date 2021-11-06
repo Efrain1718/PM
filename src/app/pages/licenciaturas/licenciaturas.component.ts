@@ -57,7 +57,7 @@ export class LicenciaturasComponent implements OnInit {
             this.pageservice.aux_onboarding_lic.next(true);
             this.router.navigate(["/licenciaturas",1])
             });
-        }, 250);
+        }, 1000);
       
       }
     });

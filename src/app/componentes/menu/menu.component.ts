@@ -159,7 +159,7 @@ if(!localStorage.getItem('visited')){
           this.pageservice.aux_onboarding_menu.next(false); 
           this.pageservice.aux_onboarding_index.next(true);    
           });
-      }, 250);
+      }, 1000);
     }
   });   
 }

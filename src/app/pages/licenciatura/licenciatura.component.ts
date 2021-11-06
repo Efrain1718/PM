@@ -143,7 +143,7 @@ export class LicenciaturaComponent implements OnInit {
       localStorage.setItem('visited','true')
       this.router.navigate(["/index"])
       });
-    }, 250);
+    }, 1000);
  
     }
   });

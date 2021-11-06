@@ -122,7 +122,7 @@ export class IndexComponent implements OnInit {
                 this.pageservice.aux_onboarding_licenciaturas.next(true);
                 this.router.navigate(['licenciaturas'])
                 });
-        }, 250);
+        }, 500);
       
       }
     });
