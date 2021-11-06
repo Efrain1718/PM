@@ -249,7 +249,7 @@ if(!localStorage.getItem('visited')){
         setTimeout(() => {
           // this.router.navigate(['/index']);
           window.location.href="https://efrain1718.github.io/PM/index"
-         }, 100);
+         }, 500);
     }
     else{
       this.pageservice.aux_login.next(undefined);
