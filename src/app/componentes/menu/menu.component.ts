@@ -241,17 +241,14 @@ if(!localStorage.getItem('visited')){
           .subscribe(resp => console.log(resp))
         }
 
-        // setTimeout(() => {
         this.pageservice.aux_login.next(undefined);
         this.pageservice.aux_historial.next(undefined);
         localStorage.removeItem('user');
         localStorage.removeItem('historial');
-        //location.href="/index"
-        // }, 500);
 
         setTimeout(() => {
           this.router.navigate(['/index']);
-         }, 100);
+         }, 300);
     }
     else{
       this.pageservice.aux_login.next(undefined);
@@ -260,7 +257,7 @@ if(!localStorage.getItem('visited')){
       
       setTimeout(() => {
         this.router.navigate(['/index']);
-        }, 100);
+        }, 300);
       
     }
      
