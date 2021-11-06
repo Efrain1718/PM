@@ -13,7 +13,7 @@
             <div fxFlex="1 0 85%" fxFlexAlign="center" fxLayout="row no-wrap" class="menu-ob">
                 <p-menubar [model]="items" styleClass="Menu "  >
                     
-                        <button  pButton type="button" label="Sign-in" class="p-button-text space-left" icon="pi pi-sign-in" (click)="Ver_login()" *ngIf="!usuario"></button>
+                        <button  pButton type="button" label="Iniciar sesión" class="p-button-text" icon="pi pi-sign-in" (click)="Ver_login()" *ngIf="!usuario"></button>
                         <p-dialog  [(visible)]="ver_login" [modal]="true" [style]="{width: '35%', height:'30%'}"
                                 [draggable]="false" [resizable]="false">
                                 <ng-template pTemplate="header">
@@ -43,7 +43,7 @@
                                 </div>
                         </p-dialog>
     
-                        <button pButton pRipple type="button" label="Sign-up" class="p-button-text text-color" (click)="Ver_registro()" *ngIf="!usuario"><i class="fa fa-solid fa-user-plus space-right-p"></i></button>       
+                        <button pButton pRipple type="button" label="Registarse" class="p-button-text text-color" (click)="Ver_registro()" *ngIf="!usuario"><i class="fa fa-solid fa-user-plus space-right-p"></i></button>       
                         <p-dialog  [(visible)]="ver_registro" [modal]="true" [style]="{width: '50%', height:'50%'}"
                         [draggable]="false" [resizable]="false">
                         <ng-template pTemplate="header">
@@ -174,15 +174,15 @@
                             </div>
                         </div>
                         </p-dialog>
-                        <button pButton pRipple type="button" label="Log-out" class="p-button-text space-left" icon="pi pi-power-off" (click)="logout()"  *ngIf="usuario"></button>
+                        <button pButton pRipple type="button" label="Salir" class="p-button-text space-left" icon="pi pi-power-off" (click)="logout()"  *ngIf="usuario"></button>
                    
 
-
+<!-- 
                     <span class="p-input-icon-left space-left" fxFlex="1 1 50%">
                         <i class="pi pi-search"></i>
                         <input type="text" pInputText placeholder="Search">
-                        <!--[(ngModel)]="value1"-->
-                    </span>
+                      [(ngModel)]="value1"
+                    </span> -->
                 </p-menubar>
             </div>
        

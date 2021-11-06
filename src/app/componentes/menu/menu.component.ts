@@ -146,13 +146,13 @@ if(!localStorage.getItem('visited')){
           doneLabel: 'Siguiente tutorial',
           steps: [
             { 
-              intro: "¡Hola y bienvenido/a a la pagina oficial de la Facultad de Ciencias Físico Matemáticas!",
+              intro: "¡Hola!, bienvenido/a a la página oficial de la Facultad de Ciencias Físico Matemáticas",
               title:"Bienvenido/a"
             },
             {
               element: document.querySelector('.menu-ob')!,
-              intro: "Aquí se encuentra nuestro menú deonde podras interactuar con la página como: navegar, iniciar sesión, registrarse, etc.",
-              title:"Menu"
+              intro: "Aquí se encuentra nuestro menú donde podrás interactuar con la página como: navegar, iniciar sesión, registrarse, etc.",
+              title:"Menú "
             }
           ]
         }).start().onexit(()=>{ 
@@ -254,10 +254,11 @@ if(!localStorage.getItem('visited')){
          }, 100);
     }
     else{
+      this.pageservice.aux_login.next(undefined);
+      this.pageservice.aux_historial.next(undefined);
+      localStorage.removeItem('user');
+      
       setTimeout(() => {
-        this.pageservice.aux_login.next(undefined);
-        this.pageservice.aux_historial.next(undefined);
-        localStorage.removeItem('user');
         this.router.navigate(['/index']);
         }, 100);
       

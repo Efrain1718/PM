@@ -105,7 +105,7 @@ export class IndexComponent implements OnInit {
                   },
                   {
                     element: document.querySelector('#US')!,
-                    intro: "Aquí se encuentra la sección sobre la hisotria de la facultad.",
+                    intro: "Aquí se encuentra la sección sobre la historia de la facultad.",
                     position:"right",
                     title:"Inicio"
                   }
