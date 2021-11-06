@@ -58,8 +58,8 @@ hr{
        transition: all 200ms !important;
    }
    
-   .Menu.p-menubar .p-menubar-root-list > .p-menuitem > .p-menuitem-link:not(.p-disabled):hover,.p-button:hover{
-        background-color: #2467dacc !important;
+   .Menu.p-menubar .p-menubar-root-list > .p-menuitem > .p-menuitem-link:not(.p-disabled):hover,.p-button:hover{ /*color antes de la rebicion : 2467dacc*/
+        background-color: #2d6dda !important;
         transform: scale(1.2,1.2);
         box-shadow:0px 5px 4px #0a2d69;
     
@@ -76,7 +76,7 @@ hr{
    }
 
    .Menu.p-menubar .p-menubar-root-list > .p-menuitem > .p-menuitem-link:not(.p-disabled):focus,.p-button:focus{
-    background-color: #2467dacc !important;
+    background-color: #2d6dda  !important;
     box-shadow: inset 0px 0px 0px 3px #18438dcc !important
     }
     .Menu.p-menubar .p-menubar-root-list > .p-menuitem > .p-menuitem-link:not(.p-disabled):focus .p-menuitem-text,.p-button:focus.p-button-text
@@ -93,11 +93,11 @@ hr{
     margin-left: 0px ;
    }
 
-.active-b{
+/* .active-b{
     background-color: #2467dacc !important;
     box-shadow: inset 0px 0px 0px 3px #18438dcc !important;
     color:white !important;
-}
+} */
 
 /*Input menu*/
    .Menu.p-menubar .p-input-icon-left .p-inputtext{
@@ -138,13 +138,13 @@ hr{
 }
 
 .p-fieldset.p-fieldset-toggleable .p-fieldset-legend a:hover{
-    background-color: #2467dacc ;
+    background-color: #2d6dda ;
     color: white;
 }
 
 .p-fieldset.p-fieldset-toggleable .p-fieldset-legend a:focus {
     box-shadow: 0 0 2px .5px #2d6dda !important;
-    background-color: #2467dacc ;
+    background-color: #2d6dda ;
     color: white;
   }
 
@@ -171,7 +171,7 @@ hr{
  .p-accordion p-accordiontab:not(:first-child) .p-accordion-header .p-accordion-header-link:focus{
     background-color: #2d6dda !important;
     color: white !important;
-    background-color: #2467dacc ;
+    background-color: #2d6dda ;
  }
 
 
@@ -262,8 +262,8 @@ hr{
  .aceptar.p-button:hover,
  .registro #registrarse  .p-button:hover{
      transform: scale(1,1);
-     background-color: rgb(11, 141, 11) !important;
-     box-shadow:0px 5px 4px rgb(1, 116, 1),0px 6px 4px rgb(1, 116, 1);
+     background-color: #2d6dda!important;
+     box-shadow:0px 5px 4px #0a2d69,0px 6px 4px #0a2d69;
      color: white !important;
  }
 
@@ -280,8 +280,8 @@ hr{
 .informacion #guardar .p-button:focus,
 .aceptar.p-button:focus,
 .registro #registrarse  .p-button:focus{
-    background-color: rgb(11, 141, 11) !important;
-    box-shadow: inset 0px 0px 0px 3px rgb(1, 116, 1) !important;
+    background-color: #2d6dda!important;
+    box-shadow:0px 5px 4px #0a2d69,0px 6px 4px #0a2d69;
     color: white !important;
     }
 
@@ -338,7 +338,7 @@ hr{
 
 .registro div label[for="img"]:hover,
 .informacion div label[for="img"]:hover{
-    background-color: #2467dacc !important;
+    background-color: #2d6dda !important;
     box-shadow:0px 5px 4px #0a2d69,0px 6px 4px #0a2d69;
     color: white;
    
@@ -438,16 +438,6 @@ input.ng-touched.ng-pristine.ng-invalid{
     box-shadow: 0px 0px 3px #9b1c20 ;
     border-radius: 3px;
 }
-
-
-
-.ng-untouched.ng-pristine.ng-valid input{
-    border:none  ;
-    border-bottom: 1px solid #c0c0c0 ;  
-    box-shadow: none ;
-    background-color: gold;
-}  
-
 
  .mssg-error{
      

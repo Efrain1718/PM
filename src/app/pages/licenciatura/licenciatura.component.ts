@@ -122,7 +122,7 @@ export class LicenciaturaComponent implements OnInit {
           },
           { 
             element: document.querySelector('div#info')!,
-            intro: "Aquí se encuentran la información de licenciatura como: objetivo de la licenciatura, perfíl del egresado, entre otros.",
+            intro: "Aquí se encuentra la información de licenciatura como: objetivo de la licenciatura, perfil del egresado, entre otros.",
             title:"Licenciatura"
           },
           { 
@@ -132,7 +132,7 @@ export class LicenciaturaComponent implements OnInit {
           },
           { 
             element: document.querySelector('#tabla')!,
-            intro: "Esta es una tabla paginada que contiene todas las materías que se imparten en la licenciatura.",
+            intro: "Esta es una tabla paginada que contiene todas las materias que se imparten en la licenciatura.",
             title:"Licenciatura"
           }
           
@@ -143,7 +143,7 @@ export class LicenciaturaComponent implements OnInit {
       localStorage.setItem('visited','true')
       this.router.navigate(["/index"])
       });
-    }, 250);
+    }, 1000);
  
     }
   });
