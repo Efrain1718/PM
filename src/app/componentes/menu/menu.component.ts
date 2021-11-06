@@ -248,7 +248,7 @@ if(!localStorage.getItem('visited')){
 
         setTimeout(() => {
           this.router.navigate(['/index']);
-         }, 300);
+         }, 100);
     }
     else{
       this.pageservice.aux_login.next(undefined);
@@ -257,7 +257,7 @@ if(!localStorage.getItem('visited')){
       
       setTimeout(() => {
         this.router.navigate(['/index']);
-        }, 300);
+        }, 100);
       
     }
      
