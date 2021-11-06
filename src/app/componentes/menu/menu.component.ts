@@ -250,14 +250,15 @@ if(!localStorage.getItem('visited')){
         // }, 500);
 
         setTimeout(() => {
-          this.router.navigate(['/index']);
+          // this.router.navigate(['/index']);
+          window.location.href="https://efrain1718.github.io/PM/index"
          }, 100);
     }
     else{
+      this.pageservice.aux_login.next(undefined);
+      this.pageservice.aux_historial.next(undefined);
+      localStorage.removeItem('user');
       setTimeout(() => {
-        this.pageservice.aux_login.next(undefined);
-        this.pageservice.aux_historial.next(undefined);
-        localStorage.removeItem('user');
         this.router.navigate(['/index']);
         }, 100);
       
