@@ -18,24 +18,24 @@
         <div id="info" fxFlex="100">
             <p-accordion [multiple]="true">
                 
-                <h2>Información de la Licenciatura</h2>
+                <h2>Información de la licenciatura</h2>
 
-                <p-accordionTab header="Nuestro Objetivo" [selected]="true">
+                <p-accordionTab header="Nuestro objetivo" [selected]="true">
                   <q>{{lic.objetivo}}</q>
                 </p-accordionTab>
 
-                <p-accordionTab header="Cualidades del Aspirante">
+                <p-accordionTab header="Cualidades del aspirante">
                     <ul>
                         <li *ngFor="let cualidad of cualidades">{{cualidad}}</li>
                     </ul>
                 </p-accordionTab>
 
-                <p-accordionTab header="Perfil Egresado">
+                <p-accordionTab header="Perfil egresado">
                     <q>{{lic.perfil_egresado}}</q>
                   </p-accordionTab>
 
                   
-                <p-accordionTab header="Areas de Laborales">
+                <p-accordionTab header="Areas de laborales">
                     <ul>
                         <li *ngFor="let trabajo of trabajos">{{trabajo}}</li>
                     </ul>
@@ -52,7 +52,7 @@
                 currentPageReportTemplate="Mostrando {first} al {last} de {totalRecords} Materias" [rowsPerPageOptions]="[5,10,20]">
                 <ng-template pTemplate="header">
                     <tr>
-                        <th>Nombre de la Materia</th>
+                        <th>Nombre de la materia</th>
                         <th>Créditos</th>
                         <th>Semetre</th>
 

@@ -33,6 +33,8 @@ import { timeout } from 'rxjs/operators';
     border-bottom: 1px solid #d8e0de;
     }
     
+
+
     `
   ],
   providers: [ConfirmationService,MessageService]
@@ -192,10 +194,11 @@ if(!localStorage.getItem('visited')){
   }
 
   login(){
-  let aux =this.login_Form.value
+    let aux =this.login_Form.value
   if(aux.email && aux.pass){
     this.pageservice.login(aux.email,aux.pass)
       .subscribe(resp => {
+        this.preview_img=undefined;
         this.ver_login=false
         this.pageservice.obtener_historial(resp.id!);
       },
@@ -211,7 +214,7 @@ if(!localStorage.getItem('visited')){
   }
 
   logout(){
-  
+   
 
     if(localStorage.getItem('historial')){
       let aux=localStorage.getItem('historial');
@@ -238,18 +241,19 @@ if(!localStorage.getItem('visited')){
           this.aux_hist.fecha=fecha_visita_hist[i];
           this.aux_hist.id=this.usuario?.id;
           this.pageservice.guardar_historial(this.aux_hist)
-          .subscribe(resp => console.log(resp))
+          .subscribe(resp =>{
+            this.pageservice.aux_login.next(undefined);
+            this.pageservice.aux_historial.next(undefined);
+            localStorage.removeItem('user');
+            localStorage.removeItem('historial');
+    
+              window.location.href="https://efrain1718.github.io/PM/index"
+              // window.location.href="http://localhost:4200/index"
+
+
+          })
         }
 
-        this.pageservice.aux_login.next(undefined);
-        this.pageservice.aux_historial.next(undefined);
-        localStorage.removeItem('user');
-        localStorage.removeItem('historial');
-
-        setTimeout(() => {
-          // this.router.navigate(['/index']);
-          window.location.href="https://efrain1718.github.io/PM/index"
-         }, 500);
     }
     else{
       this.pageservice.aux_login.next(undefined);
@@ -257,7 +261,8 @@ if(!localStorage.getItem('visited')){
       localStorage.removeItem('user');
       
       setTimeout(() => {
-        this.router.navigate(['/index']);
+      window.location.href="https://efrain1718.github.io/PM/index"
+      // window.location.href="http://localhost:4200/index"
         }, 100);
       
     }
@@ -272,7 +277,7 @@ if(!localStorage.getItem('visited')){
     this.info_usuario=auxform;
   
     if(this.info_usuario.pass!=auxform.confirmpass){
-     this.messageService.add({severity:'error', summary:'Error', detail:'Las contraseña no coinciden'});
+     this.messageService.add({severity:'error', summary:'Error', detail:'Las contraseñas no coinciden'});
      return
     }
     else{
@@ -289,8 +294,9 @@ if(!localStorage.getItem('visited')){
           this.pageservice.crear_usuario(dataform)
           .subscribe(resp =>{
             this.ver_registro=false;
-            this.messageService.add({severity:'success', summary:'Se ha creado exitosamente el usuario', detail:'Se ha eliminado correctamente el usuario'});
+            this.messageService.add({severity:'success', summary:'Registro exitoso!', detail:'Se ha creado exitosamente el usuario'});
             this.preview_img=undefined;
+            this.registro_Form.reset()
           },
           e=>{
             this.messageService.add({severity:'error', summary:'Error', detail:'Error al crear usuario, vuelva a intentarlo'});
@@ -394,7 +400,7 @@ get_Img(fileinput:Event){
     if(file==undefined){
       this.info_usuario.foto=null;
       console.log( this.info_usuario.foto);
-      this.preview_img=null
+      this.preview_img=undefined;
     }
     if(file.type == "image/jpeg" || file.type == "image/png" ){
       this.info_usuario.foto=file;
@@ -403,17 +409,15 @@ get_Img(fileinput:Event){
       reader.onload = (event) => { 
         this.preview_img = event.target!.result;
       }
-      // return file;
     }
     else{
       
       console.log("esto no es una imagen aceptada");
-      // return undefined
     }
 
   }
 
-Dialogo_confirmacion(position: string,opc: string) {
+Dialogo_confirmacion(position: string,opc: string) { //y aqui se elimina
     this.position_dialog = position;
 
     let message="";
@@ -440,8 +444,8 @@ Dialogo_confirmacion(position: string,opc: string) {
           if(opc=='eliminar'){
               this.pageservice.eliminar_usuario(this.usuario!)
               .subscribe(resp => {
-                this.messageService.add({severity:'success', summary:'Eliminación exitosa', detail:'Se ha eliminado correctamente el usuario'});
-                setTimeout( () =>{this.logout()},500 );
+                this.messageService.add({severity:'success', summary:'Eliminación exitosa!', detail:'Se ha eliminado correctamente el usuario'});
+                setTimeout( () =>{this.logout()},300);
               },e =>{
                 this.messageService.add({severity:'error', summary:'Error', detail:'Sucedío un problema al momento de eliminar, intente de nuevo'});
               });

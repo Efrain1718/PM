@@ -4,20 +4,20 @@
 <p-toast></p-toast>
 
 <div id="Header" fxLayout="row wrap" fxLayoutAlign="center center" fxFlex="100%" >
-    <div id="Cabecera" fxFlex="75%" fxLayoutGap="10px" >
+    <div id="Cabecera" fxFlex.gt-md="75%" fxFlex.gt-xs="80%" fxLayoutGap="10px" >
 
-            <div fxFlex="1 0 20%">
+            <div id="logo-fcfm" fxFlex.gt-md="1 1 20%" fxFlex.gt-xs="1 1 40%">
                 <img src="assets/Img/fcfm_2.png" alt="Image" width="90%" height="100%">
             </div>
 
-            <div fxFlex="1 0 85%" fxFlexAlign="center" fxLayout="row no-wrap" class="menu-ob">
+            <div fxFlex="1 1 100" fxFlexAlign="center" fxLayout="row wrap" class="menu-ob">
                 <p-menubar [model]="items" styleClass="Menu "  >
                     
-                        <button  pButton type="button" label="Iniciar sesión" class="p-button-text" icon="pi pi-sign-in" (click)="Ver_login()" *ngIf="!usuario"></button>
-                        <p-dialog  [(visible)]="ver_login" [modal]="true" [style]="{width: '35%', height:'30%'}"
+                        <button id="login" pButton type="button" label="Iniciar sesión" class="p-button-text" icon="pi pi-sign-in" (click)="Ver_login()" *ngIf="!usuario"></button>
+                        <p-dialog  [(visible)]="ver_login" [modal]="true" styleClass="Modal-login"
                                 [draggable]="false" [resizable]="false">
                                 <ng-template pTemplate="header">
-                                    Iniciar Sesión
+                                    Iniciar sesión
                                 </ng-template>
                           
                                 <div class="login" fxLayout="row wrap" fxLayoutAlign="center center" fxFlex="100%">
@@ -44,7 +44,7 @@
                         </p-dialog>
     
                         <button pButton pRipple type="button" label="Registarse" class="p-button-text text-color" (click)="Ver_registro()" *ngIf="!usuario"><i class="fa fa-solid fa-user-plus space-right-p"></i></button>       
-                        <p-dialog  [(visible)]="ver_registro" [modal]="true" [style]="{width: '50%', height:'50%'}"
+                        <p-dialog  [(visible)]="ver_registro" [modal]="true" styleClass="Modal-RI"
                         [draggable]="false" [resizable]="false">
                         <ng-template pTemplate="header">
                             Registro
@@ -64,11 +64,11 @@
                                     </div>
                                     
                                     <div fxFlex="1 1 50" fxLayoutAlign="center center">
-                                        <input type="text" id="ap" formControlName="apellido_P" placeholder="Apellido Paterno"  (keypress)=keyaccept($event)> 
+                                        <input type="text" id="ap" formControlName="apellido_P" placeholder="Apellido paterno"  (keypress)=keyaccept($event)> 
                                     </div>
 
                                     <div fxFlex="1 1 50" fxLayoutAlign="center center">
-                                        <input type="text" id="am" formControlName="apellido_M" placeholder="Apellido Materno" (keypress)=keyaccept($event) > 
+                                        <input type="text" id="am" formControlName="apellido_M" placeholder="Apellido materno" (keypress)=keyaccept($event) > 
                                     </div>
 
                                     <div fxFlex="1 1 50" fxLayoutAlign="center center">
@@ -80,7 +80,7 @@
                                     </div>
 
                                     <div fxFlex="1 1 50" fxLayoutAlign="center center">
-                                        <input type="password"   formControlName="confirmpass" placeholder="Confirmar Contraseña"  [ngClass]="checarSiSonIguales()  ? 'error'  : '' "> 
+                                        <input type="password"   formControlName="confirmpass" placeholder="Confirmar contraseña"  [ngClass]="checarSiSonIguales()  ? 'error'  : '' "> 
                                         <small *ngIf="checarSiSonIguales()" class="mssg-error">Las contraseña no coinciden</small>
                                     </div>
 
@@ -104,72 +104,74 @@
                         </div>
                         </p-dialog>
 
-                        <button pButton pRipple type="button" icon="pi pi-user " class="p-button-rounded p-button-text" (click)="Ver_informacion()" *ngIf="usuario" ></button>
-                        <p-dialog  [(visible)]="ver_informacion" [modal]="true" [style]="{width: '50%', height:'50%',transform: 'translateY(-61px)'}"
+                        <button pButton pRipple type="button" icon="pi pi-user " class="p-button-rounded p-button-text space-left" (click)="Ver_informacion()" *ngIf="usuario" ></button>
+                        <p-dialog  [(visible)]="ver_informacion" [modal]="true" [style]="{transform: 'translateY(-61px)'}" styleClass="Modal-RI"
                         [draggable]="false" [resizable]="false">
                         <ng-template pTemplate="header">
-                            Mi Información
+                            Mi información
                         </ng-template>
                   
                         <div class="informacion" fxLayout="row wrap" fxLayoutAlign="center center" fxFlex="100%">
 
-                            <div fxLayout="row wrap" fxLayoutAlign="center center" fxFlex="100">
+                            <div id="inputs-info" fxLayout="row wrap" fxLayoutAlign="center center" fxFlex="100">
 
-                                <div fxFlex="1 1 50" fxLayoutAlign="center center">
+                                <div fxLayoutAlign="center center">
                                     <input type="text" id="nombres"  [(ngModel)]=info_usuario.nombre placeholder="Nombres" (keypress)=keyaccept($event) required> 
                                 </div>
                                 
-                                <div fxFlex="1 1 50" fxLayoutAlign="center center">
-                                    <input type="text" id="ap" [(ngModel)]=info_usuario.apellido_P   placeholder="Apellido Paterno" (keypress)=keyaccept($event) required> 
+                                <div  fxLayoutAlign="center center">
+                                    <input type="text" id="ap" [(ngModel)]=info_usuario.apellido_P   placeholder="Apellido paterno" (keypress)=keyaccept($event) required> 
                                 </div>
 
-                                <div fxFlex="1 1 50" fxLayoutAlign="center center">
-                                    <input type="text" id="am" [(ngModel)]=info_usuario.apellido_M  placeholder="Apellido Materno"  (keypress)=keyaccept($event) required> 
+                                <div  fxLayoutAlign="center center">
+                                    <input type="text" id="am" [(ngModel)]=info_usuario.apellido_M  placeholder="Apellido materno"  (keypress)=keyaccept($event) required> 
                                 </div>
 
-                                <div fxFlex="1 1 50" fxLayoutAlign="center center">
+                                <div  fxLayoutAlign="center center">
                                     <input type="email" id="email" [(ngModel)]=info_usuario.email  placeholder="Correo"  readonly> 
                                 </div>
 
-                                <div fxFlex="1 1 50" fxLayoutAlign="center center">
+                                <div  fxLayoutAlign="center center">
                                     <input type="password"  [(ngModel)]=info_usuario.pass  placeholder="Contraseña" [ngClass]="confirmar_contra()  ? ''  : 'error' " required> 
                                 </div>
 
-                                <div fxFlex="1 1 50" fxLayoutAlign="center center">
-                                    <input type="password"   [(ngModel)]=confirm_pass  placeholder="Confirmar Contraseña"  [ngClass]="confirmar_contra()  ? ''  : 'error' " > 
+                                <div  fxLayoutAlign="center center">
+                                    <input type="password"   [(ngModel)]=confirm_pass  placeholder="Confirmar contraseña"  [ngClass]="confirmar_contra()  ? ''  : 'error' " > 
                                     <small *ngIf="!confirmar_contra()" class="mssg-error">Las contraseña no coinciden</small>
                                 </div>
 
-                                <div id="imagenes" fxFlex="1 1 100" fxLayout="row wrap" >
-                                    <div fxFlex="1 1 50" fxLayoutAlign="center start">
+                                <!-- <div id="imagenes"  fxLayout="row wrap" >
+                                    <div  fxLayoutAlign="center start">
                                        <h2>Imagen actual</h2>
                                      </div>
-                                     <div fxFlex="1 1 50" fxLayoutAlign="center start">
-                                        <h2>Imagen Nueva</h2>
+                                     <div  fxLayoutAlign="center start">
+                                        <h2>Imagen nueva</h2>
                                     </div>
                                      
+                                </div> -->
+
+                                <div id="img-p" fxLayout="row wrap" >
+
+                                    <div  fxLayoutAlign="center start">
+                                        <label for="foto-actual"> Imagen actual </label>
+                                       <img id="foto-actual"[src]="trust_url()" alt="">
+                                    </div>
+                                    <div  fxLayoutAlign="center start">
+                                        <label for="foto-actual"> Imagen nueva </label>
+                                       <img id="foto-nueva"[src]="preview_img" alt="">
+                                    </div>
                                 </div>
 
-                                <div id="img-p" fxFlex="1 1 100" fxLayout="row wrap" >
-
-                                    <div fxFlex="1 1 50" fxLayoutAlign="center start">
-                                       <img [src]="trust_url()" alt="">
-                                    </div>
-                                    <div fxFlex="1 1 50" fxLayoutAlign="center start">
-                                       <img [src]="preview_img" alt="">
-                                    </div>
-                                </div>
-
-                                <div id="btn_img" fxFlex="1 1 100" fxLayout="row wrap" fxLayoutAlign="center center">
+                                <div id="btn_img"fxLayout="row wrap" fxLayoutAlign="center center">
 
                                     <input type="file" accept="image/png,image/jpeg"  id="img" (change)="get_Img($event)"> 
                                     <label for="img">Selecciona una imagen</label>
                                 </div>
 
 
-                                <div id="regbtn" fxFlex="100" fxLayoutAlign="space-around center">
+                                <div id="regbtn" fxLayoutAlign="space-around center">
                                     <p-button id="guardar"  label="Guardar" (click)="Dialogo_confirmacion('top','actualizar')" [disabled]="!info_usuario.nombre || !info_usuario.apellido_P|| !info_usuario.apellido_M || !info_usuario.pass"  styleClass="p-button-text"></p-button> 
-                                    <p-button id="eliminar"  label="Eliminar Cuenta" (click)="Dialogo_confirmacion('top','eliminar')" styleClass="p-button-text"></p-button>
+                                    <p-button id="eliminar"  label="Eliminar cuenta" (click)="Dialogo_confirmacion('top','eliminar')" styleClass="p-button-text"></p-button>
                                 </div>
                             </div>
                         </div>

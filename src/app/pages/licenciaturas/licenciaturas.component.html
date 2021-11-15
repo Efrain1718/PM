@@ -1,7 +1,7 @@
 <div class="fondo" fxLayout="row" fxLayoutAlign="center center" fxFlex="100%">
     <div class="container" fxLayout="row wrap" fxFlex="80" fxLayoutAlign="space-evenly start" *ngIf="lics;else loading"  > 
-        <h2 fxFlex="100%">Nuestras Licenciaturas</h2>
-        <div  *ngFor="let lic of lics" fxFlex="1 1 45" id="licenciaturas">
+        <h2 fxFlex="100%">Nuestras licenciaturas</h2>
+        <div  *ngFor="let lic of lics" fxFlex.gt-md="1 1 45" fxFlex.gt-sm="1 1 90" fxFlex.xs="1 1 90" fxFlex.sm="1 1 90" id="licenciaturas">
             <p-card  styleClass="lic-cards-c" (click)="In_lic(lic.id)" >
                 <ng-template pTemplate="header">
                     <img alt="Card" src="assets/Licenciaturas/{{lic.foto}}">
