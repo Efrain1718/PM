@@ -515,10 +515,11 @@ input.ng-touched.ng-pristine.ng-invalid{
 .Modal-RI .informacion #inputs-info #img-p label{
 top:113%;
 }
-.Modal-RI .informacion #inputs-info #regbtn p-button button span,.Modal-login .login form #registrarse p-button button span{
-display: block;
 
+#registrarse span.p-button-label,#logsucces span.p-button-label,#logcancel span.p-button-label{
+    display: block;
 }
+
 
 .mssg-error{
     top:98%;
@@ -553,9 +554,10 @@ display: block;
     #Cabecera span.p-button-label{
         display: none;
     }
-    #registrarse span.p-button-label{
+    #registrarse span.p-button-label,#logsucces span.p-button-label,#logcancel span.p-button-label{
         display: block;
     }
+    
 }
 
 @media screen and (max-width:960px) {
@@ -619,7 +621,10 @@ display: block;
            margin-top: 20px;
            margin-bottom: 20px;
         }
-    
+        #registrarse span.p-button-label,#logsucces span.p-button-label,#logcancel span.p-button-label{
+            display: block;
+        }
+        
         
 }
 
@@ -636,8 +641,6 @@ display: block;
     #img img{ /*imagen de la pagina de licenciatura*/
         width: 90%;
     }
-
-    /*Modal registro e informacion*/
  
 }
 
